@@ -10,4 +10,16 @@ export class Tab3Page {
 
   constructor(public senhasService: SenhasService) {}
 
+  emitirRelatorio(){
+    const senhasTotal = this.senhasService.senhasTotal;
+    const senhasGeral = this.senhasService.senhasGeral;
+    const senhasPrior = this.senhasService.senhasPrior;
+    const senhasExame = this.senhasService.senhasExame;
+
+    console.log('Senhas emitidas:', senhasTotal);
+    console.log('Senhas gerais:', senhasGeral);
+    console.log('Senhas prioritárias:', senhasPrior);
+    console.log('Senhas exames:', senhasExame);
+  }
+
 }
