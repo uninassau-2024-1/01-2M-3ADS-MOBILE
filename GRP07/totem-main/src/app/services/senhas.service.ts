@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 export class SenhasService {
   public senhas: any[] = [];
 
+  //
   // adicionarSenha(senha: any) {
   //   if (this.senhas.length >= 5) {
   //     return; 
