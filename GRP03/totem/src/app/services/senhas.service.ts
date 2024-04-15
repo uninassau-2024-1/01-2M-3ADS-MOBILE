@@ -32,39 +32,44 @@ export class SenhasService {
     this.senhasTotal++;
   }
 
+  getSenhaSG(): string {
+    return this.senhasArray['SG'][this.senhasArray['SG'].length - 1];
+  }
+  getSenhaSP(): string {
+    return this.senhasArray['SP'][this.senhasArray['SP'].length - 1];
+  }
+  getSenhaSE(): string {
+    return this.senhasArray['SE'][this.senhasArray['SE'].length - 1];
+  }
+
   novaSenha(tipoSenha: string = ''){
-    if(tipoSenha == 'SG'){
+    if (tipoSenha === 'SG') {
       this.somaGeral();
-      this.inputNovaSenha =
-        new Date().getFullYear().toString().substring(2, 4) +
-        new Date().getMonth().toString().padStart(2, '0') +
-        new Date().getDay().toString().padStart(2, '0') +
-        '-' +
-        tipoSenha +
-        (this.senhasArray['SG'].length + 1).toString().padStart(2, '0');
+      const dataAtual: Date = new Date();
+      const ano: string = dataAtual.getFullYear().toString().substring(2, 4);
+      const mes: string = (dataAtual.getMonth() + 1).toString().padStart(2, '0');
+      const dia: string = dataAtual.getDate().toString().padStart(2, '0');
+      this.inputNovaSenha = ano + mes + dia + '-' + tipoSenha + (this.senhasArray['SG'].length + 1).toString().padStart(2, '0');
       this.senhasArray['SG'].push(this.inputNovaSenha);
     }
-    else if (tipoSenha == 'SP'){
-      this.somaPrior();
-      this.inputNovaSenha =
-        new Date().getFullYear().toString().substring(2, 4) +
-        new Date().getMonth().toString().padStart(2, '0') +
-        new Date().getDay().toString().padStart(2, '0') +
-        '-' +
-        tipoSenha +
-        (this.senhasArray['SP'].length + 1).toString().padStart(2, '0');
-      this.senhasArray['SP'].push(this.inputNovaSenha);
 
+    else if (tipoSenha === 'SP') {
+      this.somaPrior();
+      const dataAtual: Date = new Date();
+      const ano: string = dataAtual.getFullYear().toString().substring(2, 4);
+      const mes: string = (dataAtual.getMonth() + 1).toString().padStart(2, '0');
+      const dia: string = dataAtual.getDate().toString().padStart(2, '0');
+      this.inputNovaSenha = ano + mes + dia + '-' + tipoSenha + (this.senhasArray['SP'].length + 1).toString().padStart(2, '0');
+      this.senhasArray['SP'].push(this.inputNovaSenha);
     }
-    else if(tipoSenha == 'SE'){
+
+    else{
       this.somaExame();
-      this.inputNovaSenha =
-        new Date().getFullYear().toString().substring(2, 4) +
-        new Date().getMonth().toString().padStart(2, '0') +
-        new Date().getDay().toString().padStart(2, '0') +
-        '-' +
-        tipoSenha +
-        (this.senhasArray['SE'].length + 1).toString().padStart(2, '0');
+      const dataAtual: Date = new Date();
+      const ano: string = dataAtual.getFullYear().toString().substring(2, 4);
+      const mes: string = (dataAtual.getMonth() + 1).toString().padStart(2, '0');
+      const dia: string = dataAtual.getDate().toString().padStart(2, '0');
+      this.inputNovaSenha = ano + mes + dia + '-' + tipoSenha + (this.senhasArray['SE'].length + 1).toString().padStart(2, '0');
       this.senhasArray['SE'].push(this.inputNovaSenha);
     }
     console.log(this.senhasArray);
