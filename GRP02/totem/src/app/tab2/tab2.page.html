@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Atendente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Atendente</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-content class="button">
+      <ion-header>
+        <ion-toolbar>
+          <ion-button fill="outline" color="primary" (click)="chamarSenha()">Realizar Atendimento</ion-button>
+        </ion-toolbar>
+      </ion-header>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header size="large">HISTÓRICO DE SENHAS:</ion-list-header>
+        <ion-item *ngFor="let senha of senhasService.senhas">
+          <ion-icon name="{{senha.icon}}" slot="start" color="{{senha.color}}"></ion-icon>
+          <ion-label>{{senha.senha}}<br></ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content class="button">
+      <ion-header>
+        <ion-toolbar>
+          <ion-button color="danger" (click)="reiniciarSistema()">
+            <ion-icon slot="icon-only" name="reload-outline" color="dark"></ion-icon>
+            <B>REINICIAR</B>
+          </ion-button>
+        </ion-toolbar>
+      </ion-header>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
