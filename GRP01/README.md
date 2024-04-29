@@ -5,7 +5,7 @@
 * Ewerton da Silva Barbosa - 01654963
 * Gabriel Gomes Moraes da Costa- 01638883
 * João Pedro Gomes da Silva - 01634749
-* João Vitor Francisco Barbosa - 01634751
 * João Vitor do Nascimento - 01631159
+* João Vitor Francisco Barbosa - 01634751
 * Kaio Roberto Ferreira Ferres - 01635387
 * Laylson Oliveira Soares - 01602477
