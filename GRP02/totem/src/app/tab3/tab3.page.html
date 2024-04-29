@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Relatório
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Relatório</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+
+      <ion-list style="border: 5px solid rgba(5, 231, 248, 0.877); border-radius: 5px;" >
+
+        <ion-item>Senhas emitidas: {{ senhasService.senhasTotal }}</ion-item>
+        <ion-item>Total de senhas atendidas: {{ senhasService.contadorDeSenhasAtendidas }}</ion-item>
+      </ion-list>
+      <ion-item><b>Senhas Emitidas:</b></ion-item>
+      <div style="height: 200px; border: 5px solid rgb(237, 225, 3); margin-top: 6px; border-radius: 5px;">
+        <ion-item>Senhas Prioritárias: {{ senhasService.senhasPrior }}</ion-item>
+        <ion-item>Senhas Exame: {{ senhasService.senhasExame }}</ion-item>
+        <ion-item>Senhas Geral: {{ senhasService.senhasGeral }}</ion-item>
+      </div>
+      <ion-item><b>Senhas Atendidas:</b></ion-item>
+      <div style="height: 200px; border: 5px solid rgb(97, 225, 100); margin-top: 6px; border-radius: 5px;">
+        <ion-item>Senhas Prioritárias: {{ senhasService.senhaPPatendida }}</ion-item>
+        <ion-item>Senhas Exame: {{ senhasService.senhaSEatendida }}</ion-item>
+        <ion-item>Senhas Geral: {{ senhasService.senhaSGatendida }}</ion-item>
+      </div>
+
+       <ion-item><b>Tempo de Atendimento:</b> {{senhasService.somaTimeStampMinutos.toFixed(0)}}m</ion-item>
+      <ion-list>
+        <ion-item *ngFor="let detalhe of senhasService.senhasAtendidasENaoAtendidas">
+          <ion-label>
+            <h2>Número da senha: {{ detalhe.senha }}</h2>
+            <ul>
+            <li>Categoria: {{ detalhe.categoria }}</li>
+           <li>Data da Emissão: {{ detalhe.dataEmissao }}</li>
+            <li>Hora da Emissão: {{ detalhe.horaEmissao }}</li>
+           <li> Data do Atendimento: {{ detalhe.dataAtendimento }}</li>
+            <li>Hora do Atendimento: {{ detalhe.horaAtendimento }}</li>
+            <li>Guichê Responsável: {{ detalhe.guicheResponsavel }}</li>
+          </ul>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
