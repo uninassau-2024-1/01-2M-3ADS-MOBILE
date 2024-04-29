@@ -1,0 +1,45 @@
+<!-- MADE BY HÉRICLES PAIVA SABACK DE MOURA -->
+<!-- DO <B>NOT</B> USE WITHOUT PERMISSION! -->
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Paciente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <!-- <ion-card-header>
+      <ion-input readonly="true" label="Senha: " value="{{inputNovaSenha}}"></ion-input>
+    </ion-card-header> -->
+    <ion-card-content>
+      <ion-button id="alerta-SG" expand="block" (click)="senhasService.novaSenha('SG')">Senha Geral</ion-button>
+      <ion-alert
+      trigger="alerta-SG"
+      header="SENHA"
+      message='{{senhasService.getSenhaSG()}}'
+      [buttons]="alertButtons"
+      ></ion-alert>
+
+      <ion-button id="alerta-SP" expand="block" (click)="senhasService.novaSenha('SP')">Senha Prioritária</ion-button>
+      <ion-alert
+      trigger="alerta-SP"
+      header="SENHA"
+      message='{{senhasService.getSenhaSP()}}'
+      [buttons]="alertButtons"
+      ></ion-alert>
+
+      <ion-button id="alerta-SE" expand="block" (click)="senhasService.novaSenha('SE')">Senha Exame</ion-button>
+      <ion-alert
+      trigger="alerta-SE"
+      header="SENHA"
+      message='{{senhasService.getSenhaSE()}}'
+      [buttons]="alertButtons"
+      ></ion-alert>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
