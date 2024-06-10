@@ -1,0 +1,7 @@
+{
+  "name": "jogoMario",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
