@@ -1,0 +1,6 @@
+{
+  "name": "myapp",
+  "integrations": {},
+  "type": "angular",
+  "appId": "com.exemplo.myapp"
+}
